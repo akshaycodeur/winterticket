@@ -6,7 +6,7 @@ interface Props {
 }
 
 const DataTable = ({ tickets }: Props) => {
-  return <div>DataTable</div>;
+  return <div className="w-full">DataTable</div>;
 };
 
 export default DataTable;

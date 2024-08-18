@@ -26,7 +26,7 @@ import {
 
 const SidebarNav = () => {
   return (
-    <Command className="rounded-lg border shadow-md max-w-xs h-screen bg-zinc-50 px-5">
+    <Command className="rounded-lg border shadow-md max-w-xs h-screen bg-zinc-50 px-5 sticky  fixed">
       <h4 className="text-xl font-semibold p-4 uppercase ">Tech Tickets</h4>
       <CommandInput placeholder="Type a command or search..." />
       <CommandList>

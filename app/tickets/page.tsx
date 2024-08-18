@@ -15,7 +15,7 @@ const Tickets = async () => {
   console.log(tickets);
 
   return (
-    <div>
+    <div className="w-full">
       <Table>
         <TableHeader>
           <TableRow>

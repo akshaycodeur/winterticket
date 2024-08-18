@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} flex`}>
+      <body className={`${inter.className} flex flex-row bg-slate-50`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -27,8 +27,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <SidebarNav />
-          <main>
-            <div className="bg-red-300">{children}</div>
+          <main className="flex w-full">
+            <div className="w-[25rem] h-screen bg-red-100">a</div>
+            <div className="w-full my-10 mx-10">{children}</div>
           </main>
         </ThemeProvider>
       </body>
