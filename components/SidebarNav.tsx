@@ -100,7 +100,7 @@ const SidebarNav: React.FC = () => {
                 href="/tickets/overdue"
                 className="flex items-center p-1 hover:bg-gray-800 rounded-md"
               >
-                <SirenIcon className="mr-2 text-red-500 w-4" />
+                <SirenIcon className="mr-2 text-amber-500 w-4" />
                 Overdue Tickets
               </Link>
             </li>
