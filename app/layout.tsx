@@ -26,11 +26,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <MainNav />
-
           <main className="flex w-full">
-            <div className="w-[25rem] h-screen bg-red-100">a</div>
-            <div className="w-full my-10 mx-10">{children}</div>
+            <div className="w-[25rem] h-screen">
+              <SidebarNav />
+            </div>
+            <div className="w-full p-10 md:p-16 bg-slate-100">{children}</div>
           </main>
         </ThemeProvider>
       </body>

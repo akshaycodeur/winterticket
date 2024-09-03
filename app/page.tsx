@@ -1,9 +1,12 @@
-import React from 'react'
+import DashboardUser from "@/components/DashboardUser";
+import React from "react";
 
 const Dashboard = () => {
   return (
-    <div>Dashboard</div>
-  )
-}
+    <div className="">
+      <DashboardUser />
+    </div>
+  );
+};
 
-export default Dashboard
+export default Dashboard;
