@@ -10,7 +10,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(validation.error.format(), { status: 400 });
   }
 
-  const newTicket = await prisma.TicketDB.create({
+  const newTicket = await prisma.task.create({
     data: { ...body },
   });
 

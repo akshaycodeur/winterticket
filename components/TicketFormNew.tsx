@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Form, FormControl, FormField, FormItem, FormLabel } from "./ui/form";
 import { ticketSchema } from "@/app/ValidationSchemas/ticket";
 import { z } from "zod";
@@ -15,16 +15,29 @@ import {
   SelectContent,
   SelectItem,
 } from "./ui/select";
+import { Button } from "./ui/button";
+import axios from "axios";
 
 type TicketFormData = z.infer<typeof ticketSchema>;
 
 const TicketFormNew = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
+
   const form = useForm<TicketFormData>({
     resolver: zodResolver(ticketSchema),
   });
 
   async function onSubmit(values: z.infer<typeof ticketSchema>) {
-    console.log(values);
+    try {
+      setIsSubmitting(true);
+      setError("");
+      await axios.post("/api/tickets", values);
+    } catch (error) {
+      console.log(error);
+      setError("Unknown Error DETECTED!! Hah");
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -131,12 +144,13 @@ const TicketFormNew = () => {
             </div>
           </div>
 
-          <button
+          <Button
             type="submit"
+            disabled={isSubmitting}
             className="w-full py-3 px-4 bg-blue-600 text-white font-semibold rounded-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-200"
           >
             Submit
-          </button>
+          </Button>
         </form>
       </Form>
     </div>
