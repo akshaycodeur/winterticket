@@ -17,12 +17,15 @@ import {
 } from "./ui/select";
 import { Button } from "./ui/button";
 import axios from "axios";
+import router from "next/router";
+import { useRouter } from "next/navigation";
 
 type TicketFormData = z.infer<typeof ticketSchema>;
 
 const TicketFormNew = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
+  const router = useRouter();
 
   const form = useForm<TicketFormData>({
     resolver: zodResolver(ticketSchema),
@@ -33,6 +36,7 @@ const TicketFormNew = () => {
       setIsSubmitting(true);
       setError("");
       await axios.post("/api/tickets", values);
+      router.push("/tickets");
     } catch (error) {
       console.log(error);
       setError("Unknown Error DETECTED!! Hah");
