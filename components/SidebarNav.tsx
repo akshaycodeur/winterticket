@@ -10,7 +10,21 @@ import {
   BarChartIcon,
   FileIcon,
   GroupIcon,
+  ArchiveIcon,
 } from "@radix-ui/react-icons"; // Ensure these icons exist in the package
+import {
+  CalendarDays,
+  ChartBarIcon,
+  File,
+  FilePlus2Icon,
+  FilesIcon,
+  FolderCheck,
+  House,
+  SirenIcon,
+  TagIcon,
+  TagsIcon,
+  Users2Icon,
+} from "lucide-react";
 
 const SidebarNav: React.FC = () => {
   const [isCalendarVisible, setIsCalendarVisible] = useState(false);
@@ -33,7 +47,7 @@ const SidebarNav: React.FC = () => {
             href="/"
             className="flex items-center p-2 hover:bg-gray-800 rounded-md"
           >
-            <HomeIcon className="mr-2" />
+            <House className="mr-2 text-sky-500 w-5" />
             <span>Dashboard</span>
           </Link>
         </div>
@@ -41,7 +55,7 @@ const SidebarNav: React.FC = () => {
         {/* Tickets */}
         <div className="mb-2">
           <div className="flex items-center p-2 hover:bg-gray-800 rounded-md">
-            <CheckboxIcon className="mr-2" />
+            <TagsIcon className="mr-2 text-sky-500 w-5" />
             <span>Tickets</span>
           </div>
           <ul className="pl-6">
@@ -50,7 +64,7 @@ const SidebarNav: React.FC = () => {
                 href="/tickets/"
                 className="flex items-center p-1 hover:bg-gray-800 rounded-md"
               >
-                <CheckboxIcon className="mr-2" />
+                <TagIcon className="mr-2 text-sky-500 w-4" />
                 All Tickets
               </Link>
             </li>
@@ -59,7 +73,7 @@ const SidebarNav: React.FC = () => {
                 href="/tickets/my"
                 className="flex items-center p-1 hover:bg-gray-800 rounded-md"
               >
-                <CheckboxIcon className="mr-2" />
+                <TagIcon className="mr-2 text-sky-500 w-4" />
                 My Tickets
               </Link>
             </li>
@@ -68,7 +82,7 @@ const SidebarNav: React.FC = () => {
                 href="/tickets/open"
                 className="flex items-center p-1 hover:bg-gray-800 rounded-md"
               >
-                <CheckboxIcon className="mr-2" />
+                <TagIcon className="mr-2 text-sky-500 w-4" />
                 Open Tickets
               </Link>
             </li>
@@ -77,7 +91,7 @@ const SidebarNav: React.FC = () => {
                 href="/tickets/closed"
                 className="flex items-center p-1 hover:bg-gray-800 rounded-md"
               >
-                <CheckboxIcon className="mr-2" />
+                <FolderCheck className="mr-2 text-sky-500 w-4" />
                 Closed Tickets
               </Link>
             </li>
@@ -86,7 +100,7 @@ const SidebarNav: React.FC = () => {
                 href="/tickets/overdue"
                 className="flex items-center p-1 hover:bg-gray-800 rounded-md"
               >
-                <CheckboxIcon className="mr-2" />
+                <SirenIcon className="mr-2 text-red-500 w-4" />
                 Overdue Tickets
               </Link>
             </li>
@@ -99,7 +113,7 @@ const SidebarNav: React.FC = () => {
             href="/tickets/new"
             className="flex items-center p-2 hover:bg-gray-800 rounded-md"
           >
-            <PlusIcon className="mr-2" />
+            <FilePlus2Icon className="mr-2 text-sky-500 w-5" />
             <span>Create Ticket</span>
           </Link>
         </div>
@@ -110,7 +124,7 @@ const SidebarNav: React.FC = () => {
             href="/projects"
             className="flex items-center p-2 hover:bg-gray-800 rounded-md"
           >
-            <FileIcon className="mr-2" />
+            <FilesIcon className="mr-2 text-sky-500 w-5" />
             <span>Projects</span>
           </Link>
         </div>
@@ -121,7 +135,7 @@ const SidebarNav: React.FC = () => {
             href="/teams"
             className="flex items-center p-2 hover:bg-gray-800 rounded-md"
           >
-            <GroupIcon className="mr-2" />
+            <Users2Icon className="mr-2 text-sky-500 w-5" />
             <span>Teams</span>
           </Link>
         </div>
@@ -132,7 +146,7 @@ const SidebarNav: React.FC = () => {
             onClick={toggleCalendar}
             className="flex items-center p-2 hover:bg-gray-800 rounded-md w-full text-left"
           >
-            <CalendarIcon className="mr-2" />
+            <CalendarDays className="mr-2 text-sky-500 w-5" />
             <span>{isCalendarVisible ? "Timeline" : "Calendar"}</span>
           </button>
         </div>
@@ -143,7 +157,7 @@ const SidebarNav: React.FC = () => {
             href="/reports"
             className="flex items-center p-2 hover:bg-gray-800 rounded-md"
           >
-            <BarChartIcon className="mr-2" />
+            <ChartBarIcon className="mr-2 text-sky-500 w-5" />
             <span>Reports</span>
           </Link>
         </div>
