@@ -13,12 +13,12 @@ import TicketStatusBadge from "@/components/TicketStatusBadge";
 import TicketPriorityBadge from "@/components/TicketPriorityBadge";
 
 const Tickets = async () => {
-  const tickets = await prisma.task.findMany();
+  const tickets = await prisma.Ticket.findMany();
   console.log(tickets);
 
   return (
     <div className="w-full">
-      <div className="rounded-md bg-red-50 p-5">
+      <div className="rounded-md">
         <Table>
           <TableHeader>
             <TableRow>

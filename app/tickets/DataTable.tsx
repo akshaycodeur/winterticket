@@ -1,5 +1,5 @@
 import React from "react";
-import { Task } from "@prisma/client";
+import { Ticket } from "@prisma/client";
 
 interface Props {
   tickets: Ticket[];
